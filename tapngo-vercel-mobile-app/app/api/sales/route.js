@@ -1,0 +1,1 @@
+import {sales,createSale,products} from '../../../lib/data'; export async function GET(){return Response.json({sales,products})} export async function POST(req){const b=await req.json();return Response.json(createSale(b.items||[],b.cashier),{status:201})}
