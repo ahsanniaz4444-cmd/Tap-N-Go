@@ -1,1 +1,0 @@
-import {users} from '../../../../lib/data'; export async function POST(req){const {email,password}=await req.json();const u=users.find(x=>x.email===email&&x.password===password);if(!u)return Response.json({error:'Invalid login'}, {status:401});return Response.json({user:{email:u.email,name:u.name,role:u.role}})}
